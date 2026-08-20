@@ -12,7 +12,7 @@ import DemoModal from './components/DemoModal';
 import Board from './pages/Board';
 
 function MainLayout() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
   const [authModal, setAuthModal] = useState({ isOpen: false, type: 'signup' });
   const [isDemoOpen, setIsDemoOpen] = useState(false);
   const location = useLocation();
