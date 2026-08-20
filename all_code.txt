@@ -1,0 +1,1100 @@
+﻿========================================
+FILE: Contact.jsx
+========================================
+import { FiMessageSquare } from 'react-icons/fi';
+import { FaXTwitter, FaLinkedin } from 'react-icons/fa6';
+
+export default function Contact() {
+  const ContactSections = [
+    {
+      title: "Product",
+      links: [
+        "Features", "Online retrospectives", "Retrospective templates",
+        "Retrospective board", "Remote retrospectives", "Anonymous retrospectives",
+        "Engineering retrospectives", "Product team retrospectives",
+        "Run your first retrospective", "Microsoft Teams retrospectives",
+        "Jira retrospective workflow", "Pricing", "FAQ", "Log in", "Sign up"
+      ]
+    },
+    {
+      title: "Templates",
+      links: [
+        "Classic Sprint Retro", "Start / Stop / Continue", "Sailboat",
+        "4Ls", "Mountain Climber", "Browse all templates"
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        "This or That questions for work", "Meeting check-in questions",
+        "What is a Retrospective?", "Retros That Ship Changes Instead of Notes",
+        "AI-Focused Retrospectives for Team AI Working Agreements", "Read the blog"
+      ]
+    },
+    {
+      title: "Free tools",
+      links: [
+        "Ice breaker games", "Do You Agree questions", "Hilarious icebreaker questions",
+        "Team name generator", "Sprint capacity calculator", "Sprint velocity calculator",
+        "Planning poker", "Browse all free tools", "Compare retrospective tools"
+      ]
+    },
+    {
+      title: "Comparisons",
+      links: [
+        "HeyRetro vs Parabol", "HeyRetro vs EasyRetro", "HeyRetro vs TeamRetro",
+        "HeyRetro vs Metro Retro", "HeyRetro vs Neatro"
+      ]
+    }
+  ];
+
+  return (
+    <Contact className="relative pt-12 pb-16 px-4 bg-[#FDFBF9] border-t border-gray-200/60 text-gray-600">
+      {/* Dot Pattern Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
+        style={{
+          backgroundImage: 'radial-gradient(#d1d5db 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {/* Top Orange CTA Banner */}
+        <div className="bg-[#FF5733] text-white rounded-3xl p-8 md:p-12 mb-20 shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="max-w-xl text-center md:text-left">
+            <h3 className="text-2xl md:text-3xl font-bold mb-2">
+              Ready to run retros your team actually looks forward to?
+            </h3>
+            <p className="text-white/80 text-sm">
+              Pick a template, invite the team, and turn the leading cards into one owned action.
+            </p>
+          </div>
+          <button className="bg-white text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition whitespace-nowrap text-sm shadow-sm">
+            Start free retro
+          </button>
+        </div>
+
+        {/* Contact Navigation Links */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-16 text-xs">
+          
+          {/* Brand Info */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-1.5 font-bold text-gray-900 text-base mb-4">
+              <span className="text-[#FF5733] bg-[#FF5733]/10 p-1 rounded-md">
+                <FiMessageSquare className="w-4 h-4 fill-current" />
+              </span>
+              <span>HeyRetro</span>
+            </div>
+            <p className="text-gray-500 leading-relaxed mb-6">
+              Real-time retrospectives for teams that want every sprint to be better than the last.
+            </p>
+            
+            <div className="font-semibold text-gray-900 mb-2">Company</div>
+            <ul className="space-y-2 text-gray-500">
+              <li><a href="#" className="hover:text-gray-900">Privacy</a></li>
+              <li><a href="#" className="hover:text-gray-900">Terms</a></li>
+              <li><a href="#" className="hover:text-gray-900">LLMs.txt</a></li>
+            </ul>
+          </div>
+
+          {/* Dynamic Link Columns */}
+          {ContactSections.map((section, idx) => (
+            <div key={idx} className="col-span-1">
+              <h4 className="font-semibold text-gray-900 mb-4">{section.title}</h4>
+              <ul className="space-y-2.5">
+                {section.links.map((link, lIdx) => (
+                  <li key={lIdx}>
+                    <a href="#" className="text-gray-500 hover:text-gray-900 transition-colors block">
+                      {link}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom Copyright Bar */}
+        <div className="pt-8 border-t border-gray-200/60 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <div>
+            Â© 2026 HeyRetro
+          </div>
+
+          <div className="flex items-center gap-4 text-gray-500">
+            <a href="#" className="hover:text-gray-900 transition"><FaXTwitter size={15} /></a>
+            <a href="#" className="hover:text-gray-900 transition"><FaLinkedin size={15} /></a>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a href="#" className="hover:text-gray-600">Privacy</a>
+            <a href="#" className="hover:text-gray-600">Terms</a>
+          </div>
+        </div>
+
+      </div>
+    </Contact>
+  );
+}
+
+
+
+========================================
+FILE: FeaturesBoard.jsx
+========================================
+
+// Ù…Ø³ÛŒØ± Ø¹Ú©Ø³â€ŒÙ‡Ø§ÛŒ Ø®ÙˆØ¯Øª Ø±Ø§ Ø§ÛŒÙ†Ø¬Ø§ Ø§ÛŒÙ…Ù¾ÙˆØ±Øª Ú©Ù†
+import featureImg1 from '../assets/images/1.png';
+import featureImg2 from '../assets/images/2.png';
+import featureImg3 from '../assets/images/3.png';
+
+export default function FeaturesBoard() {
+  const features = [
+    {
+      id: 1,
+      title: "Invite the team with one link",
+      description: "Share the board link. Teammates can open it as guests, and a display name is optional.",
+      image: featureImg1
+    },
+    {
+      id: 2,
+      title: "Guide the session on one board",
+      description: "Use live presence, grouping, voting, surveys, phases, and a built-in timer in the same session.",
+      image: featureImg2
+    },
+    {
+      id: 3,
+      title: "Keep the action on the board",
+      description: "Create an action during Focus, link it to the chosen topics, and carry it into Wrap-up on the same board.",
+      image: featureImg3
+    }
+  ];
+
+  return (
+    <section className="relative py-20 px-4 bg-[#FDFBF9]">
+      {/* Dot Pattern Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
+        style={{
+          backgroundImage: 'radial-gradient(#d1d5db 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Section Heading */}
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-12">
+          Everything stays on the board.
+        </h2>
+
+        {/* 3-Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((item) => (
+            <div 
+              key={item.id} 
+              className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] flex flex-col h-full"
+            >
+              {/* Image Container */}
+              <div className="w-full h-56 sm:h-64 bg-gray-100 overflow-hidden">
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover object-center pointer-events-none"
+                />
+              </div>
+
+              {/* Card Content */}
+              <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+========================================
+FILE: Footer.jsx
+========================================
+import React from 'react';
+import { FiSmile } from 'react-icons/fi';
+
+export default function Footer() {
+  return (
+    <footer className="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-lg font-black">
+              <FiSmile />
+            </div>
+            <span className="text-xl font-black text-white">HeyRetro</span>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-8 font-medium">
+            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">Security</a>
+            <a href="#" className="hover:text-white transition-colors">Agile Guides</a>
+          </div>
+        </div>
+
+        <div className="text-center md:text-left border-t border-slate-900 pt-8 text-xs text-slate-500">
+          Â© 2026 HeyRetro Clone. Designed & Built for React & Tailwind Portfolio.
+        </div>
+
+      </div>
+    </footer>
+  );
+}
+
+
+
+========================================
+FILE: Hero.jsx
+========================================
+import { FiArrowRight } from 'react-icons/fi';
+
+export default function Hero() {
+  return (
+    <section className="relative pt-16 pb-32 overflow-hidden text-center">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-[#FF5733]/10 blur-[100px] rounded-full -z-10"></div>
+
+      <div className="max-w-4xl mx-auto px-4 relative z-10">
+        <h1 className="text-6xl md:text-[80px] font-bold tracking-tight leading-[1.05] text-gray-900 mb-6">
+          Retros your team <br />
+          will look <span className="text-gray-400">forward to</span>
+        </h1>
+        
+        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+          Run the retro together on one live board, from the first icebreaker to the last vote. Templates, timers, anonymous surveys, and action items keep the meeting moving while the team works through one shared flow from start to finish.
+        </p>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button className="bg-[#111827] text-white rounded-full px-7 py-3.5 font-medium flex items-center gap-2 hover:bg-black transition">
+            Start free retro <FiArrowRight />
+          </button>
+          <button className="bg-white border border-gray-200 text-gray-900 rounded-full px-7 py-3.5 font-medium flex items-center gap-3 hover:bg-gray-50 transition shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+            Try the live demo
+          </button>
+        </div>
+      </div>
+
+      {/* Floating UI Elements Mockup */}
+      <div className="mt-20 relative max-w-5xl mx-auto h-[400px] hidden md:block">
+        
+        {/* Main Board Center */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] bg-white rounded-2xl shadow-xl border border-gray-100 p-4 z-20">
+          <div className="flex justify-between items-center border-b border-gray-100 pb-3 mb-3">
+            <div className="font-bold text-sm">Sprint 24 Retro</div>
+            <div className="flex items-center gap-2 text-xs text-gray-500 border border-gray-200 rounded px-2 py-1">â± Timer</div>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="bg-gray-50 rounded-xl p-3 h-48 border border-gray-100">
+              <span className="text-xs font-bold text-emerald-600 border-b-2 border-emerald-500 pb-1">Went Well 4</span>
+              <div className="mt-3 bg-white p-2 rounded shadow-sm text-xs text-left">Checkout latency dropped after the promo fix.</div>
+            </div>
+            <div className="bg-gray-50 rounded-xl p-3 h-48 border border-gray-100">
+              <span className="text-xs font-bold text-amber-500 border-b-2 border-amber-500 pb-1">To Improve 4</span>
+              <div className="mt-3 bg-white p-2 rounded shadow-sm text-xs text-left">Release notes landed too late for CS.</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Left: Classic Sprint */}
+        <div className="absolute top-10 left-[10%] -rotate-6 w-48 bg-white rounded-xl shadow-lg border border-gray-100 p-3 z-10">
+          <div className="flex items-center gap-2 text-xs font-bold mb-3"><span className="w-2 h-2 bg-emerald-500 rounded-full"></span> Classic Sprint</div>
+          <div className="grid grid-cols-3 gap-1 opacity-40">
+            <div className="h-6 bg-emerald-100 rounded"></div>
+            <div className="h-6 bg-emerald-100 rounded"></div>
+            <div className="h-6 bg-emerald-100 rounded"></div>
+            <div className="h-8 bg-gray-100 rounded"></div>
+            <div className="h-8 bg-gray-100 rounded"></div>
+            <div className="h-8 bg-gray-100 rounded"></div>
+          </div>
+        </div>
+
+        {/* Floating Right: Teams Integration */}
+        <div className="absolute top-20 right-[5%] rotate-3 w-56 bg-white rounded-xl shadow-lg border border-gray-100 p-4 z-10 text-left">
+          <div className="flex items-center gap-2 text-sm font-bold text-[#5B5FC7] mb-2">T Microsoft Teams</div>
+          <p className="text-xs text-gray-500 mb-3">Start a retro from any channel, chat, or meeting.</p>
+          <button className="bg-[#5B5FC7] text-white text-xs px-3 py-1.5 rounded-md">Open board â†’</button>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
+
+========================================
+FILE: Navbar.jsx
+========================================
+import React from 'react';
+import { FiMessageSquare, FiSun, FiMoon, FiChevronDown } from 'react-icons/fi';
+
+export default function Navbar() {
+  return (
+    <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      {/* Logo */}
+      <div className="flex items-center gap-2 cursor-pointer">
+        <div className="text-[#FF5733] bg-[#FF5733]/10 p-1.5 rounded-lg">
+          <FiMessageSquare className="w-6 h-6 fill-current" />
+        </div>
+        <span className="text-xl font-bold tracking-tight">HeyRetro</span>
+      </div>
+
+      {/* Links */}
+      <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+        <a href="#" className="hover:text-gray-900 transition">Features</a>
+        <a href="#" className="flex items-center gap-1 hover:text-gray-900 transition">Templates <FiChevronDown /></a>
+        <a href="#" className="hover:text-gray-900 transition">Pricing</a>
+        <a href="#" className="flex items-center gap-1 hover:text-gray-900 transition">Tools <FiChevronDown /></a>
+        <a href="#" className="flex items-center gap-1 hover:text-gray-900 transition">Resources <FiChevronDown /></a>
+      </div>
+
+      {/* Actions */}
+      <div className="hidden md:flex items-center gap-4">
+        <div className="flex items-center bg-gray-200/60 rounded-full p-1 cursor-pointer">
+          <div className="bg-white p-1.5 rounded-full shadow-sm text-yellow-500"><FiSun size={14} /></div>
+          <div className="p-1.5 text-gray-400"><FiMoon size={14} /></div>
+        </div>
+        <button className="text-sm font-medium text-gray-700 hover:text-gray-900 px-2">Sign up</button>
+        <button className="text-sm font-medium border border-gray-300 rounded-full px-5 py-2 hover:bg-gray-50 transition">Log in</button>
+      </div>
+    </nav>
+  );
+}
+
+
+
+========================================
+FILE: Phases.jsx
+========================================
+import { FiMessageSquare, FiCheckSquare, FiCrosshair, FiList } from 'react-icons/fi';
+
+export default function Phases() {
+  // ØªØ¹Ø±ÛŒÙ Ø¯Ø§Ø¯Ù‡â€ŒÙ‡Ø§ Ø¨Ù‡ ØµÙˆØ±Øª Ù…Ø¬Ø²Ø§ Ø¨Ø±Ø§ÛŒ Ø¬Ù„ÙˆÚ¯ÛŒØ±ÛŒ Ø§Ø² Ú©Ø«ÛŒÙ Ø´Ø¯Ù† JSX Ùˆ ØªÚ©Ø±Ø§Ø± Ú©Ø¯
+  const phasesData = [
+    {
+      id: '01',
+      title: 'Collect',
+      description: 'Give everyone quiet writing time for specific observations.',
+      icon: <FiMessageSquare className="w-5 h-5" />
+    },
+    {
+      id: '02',
+      title: 'Vote',
+      description: "Use the vote to give the team's limited meeting time to one priority.",
+      icon: <FiCheckSquare className="w-5 h-5" />
+    },
+    {
+      id: '03',
+      title: 'Focus',
+      description: 'Bring related evidence together, discuss causes, and shape one practical change.',
+      icon: <FiCrosshair className="w-5 h-5" />
+    },
+    {
+      id: '04',
+      title: 'Wrap-up',
+      description: 'Record the action and leave the board with a visible next step.',
+      icon: <FiList className="w-5 h-5" />
+    }
+  ];
+
+  return (
+    <section className="relative py-24 px-4 border-t border-gray-200/60 bg-[#FDFBF9]">
+      {/* 
+        Ø§Ù„Ú¯ÙˆÛŒ Ù†Ù‚Ø·Ù‡â€ŒØ§ÛŒ Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ (Dot Pattern)
+        Ø§ÛŒÙ† Ø¨Ø®Ø´ Ø¯Ù‚ÛŒÙ‚Ø§Ù‹ Ù‡Ù…Ø§Ù† Ø­Ø³ Ø¨Ú©â€ŒÚ¯Ø±Ø§Ù†Ø¯ ØªØµÙˆÛŒØ±Øª Ø±Ø§ ØªØ¯Ø§Ø¹ÛŒ Ù…ÛŒâ€ŒÚ©Ù†Ø¯.
+      */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
+        style={{
+          backgroundImage: 'radial-gradient(#d1d5db 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header Section */}
+        <div className="mb-12 max-w-2xl">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-4">
+            Four phases keep the retro moving.
+          </h2>
+          <p className="text-gray-500 text-lg">
+            HeyRetro moves the conversation through four phases and ends the board with a visible action.
+          </p>
+        </div>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {phasesData.map((phase) => (
+            <div 
+              key={phase.id} 
+              className="bg-white p-6 rounded-2xl border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] flex flex-col h-full transition-shadow hover:shadow-md"
+            >
+              <div className="flex justify-between items-center mb-8">
+                <div className="text-[#FF5733]">
+                  {phase.icon}
+                </div>
+                <span className="text-gray-400 text-sm font-medium font-mono">
+                  {phase.id}
+                </span>
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-900 mb-3">
+                {phase.title}
+              </h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                {phase.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+========================================
+FILE: Pricing.jsx
+========================================
+import { FiCheck } from 'react-icons/fi';
+
+export default function Pricing() {
+  return (
+    <section className="py-24 px-4 max-w-6xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
+          Choose a plan based on how <br/> many boards and teams your <br/> organization needs each month.
+        </h2>
+        
+        <div className="flex items-center justify-center gap-4 mt-8 relative">
+          <span className="text-sm font-medium">Monthly</span>
+          <div className="w-12 h-7 bg-[#111827] rounded-full flex items-center px-1 justify-end cursor-pointer">
+            <div className="w-5 h-5 bg-white rounded-full"></div>
+          </div>
+          <span className="text-sm font-medium">Yearly</span>
+          
+          <div className="absolute -top-6 right-[40%] text-[#FF5733] font-handwriting text-sm rotate-[-10deg]">
+            â†™ Save ~25%
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch">
+        
+        {/* Free */}
+        <div className="bg-white rounded-3xl p-8 border border-gray-200">
+          <h3 className="text-xl font-bold mb-2">Free</h3>
+          <p className="text-sm text-gray-500 mb-6">For solo facilitators kicking the tires.</p>
+          <div className="text-4xl font-bold mb-1">$0 <span className="text-base text-gray-500 font-normal">/month</span></div>
+          <p className="text-xs text-gray-400 mb-8">Forever free</p>
+          <ul className="space-y-4 text-sm text-gray-700">
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/10 rounded-full p-0.5"><FiCheck size={12}/></div> 1 board per month</li>
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/10 rounded-full p-0.5"><FiCheck size={12}/></div> Anonymous surveys</li>
+          </ul>
+        </div>
+
+        {/* Team */}
+        <div className="bg-white rounded-3xl p-8 border border-gray-200">
+          <h3 className="text-xl font-bold mb-2">Team</h3>
+          <p className="text-sm text-gray-500 mb-6">For a single squad starting their retro habit.</p>
+          <div className="text-4xl font-bold mb-1">$14 <span className="text-base text-gray-500 font-normal">/month</span></div>
+          <p className="text-xs text-gray-400 mb-8">Billed yearly</p>
+          <ul className="space-y-4 text-sm text-gray-700">
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/10 rounded-full p-0.5"><FiCheck size={12}/></div> 2 teams</li>
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/10 rounded-full p-0.5"><FiCheck size={12}/></div> 5 boards per month</li>
+          </ul>
+        </div>
+
+        {/* Team Pro (Dark) */}
+        <div className="bg-[#111827] text-white rounded-3xl p-8 border border-gray-800 relative transform md:-translate-y-4 shadow-xl">
+          <div className="absolute top-6 right-6 bg-[#FF5733] text-white text-xs font-bold px-2 py-1 rounded">Most popular</div>
+          <h3 className="text-xl font-bold mb-2">Team Pro</h3>
+          <p className="text-sm text-gray-400 mb-6">For growing orgs running parallel retros every sprint.</p>
+          <div className="text-4xl font-bold mb-1">$49 <span className="text-base text-gray-400 font-normal">/month</span></div>
+          <p className="text-xs text-gray-500 mb-8">Billed yearly</p>
+          <div className="text-sm font-bold mb-4">Everything in Team, plus:</div>
+          <ul className="space-y-4 text-sm text-gray-300">
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/20 rounded-full p-0.5"><FiCheck size={12}/></div> 10 teams</li>
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/20 rounded-full p-0.5"><FiCheck size={12}/></div> Unlimited boards</li>
+          </ul>
+        </div>
+
+        {/* Enterprise */}
+        <div className="bg-white rounded-3xl p-8 border border-gray-200">
+          <h3 className="text-xl font-bold mb-2">Enterprise</h3>
+          <p className="text-sm text-gray-500 mb-6">For companies with SSO and scale needs.</p>
+          <div className="text-4xl font-bold mb-1">$99 <span className="text-base text-gray-500 font-normal">/month</span></div>
+          <p className="text-xs text-gray-400 mb-8">Billed yearly</p>
+          <ul className="space-y-4 text-sm text-gray-700">
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/10 rounded-full p-0.5"><FiCheck size={12}/></div> Unlimited teams</li>
+            <li className="flex items-center gap-2"><div className="text-[#FF5733] bg-[#FF5733]/10 rounded-full p-0.5"><FiCheck size={12}/></div> SAML & OIDC SSO</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
+
+========================================
+FILE: RetroBoardPreview.jsx
+========================================
+import { FiThumbsUp, FiMessageSquare, FiPlus,  } from 'react-icons/fi';
+
+export default function RetroBoardPreview() {
+  return (
+    <section id="preview" className="pb-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Ú©Ø§Ø¯Ø± Ø´Ø¨Ù‡â€ŒÙ†Ø±Ù…â€ŒØ§ÙØ²Ø§Ø±ÛŒ Ø¨ÙˆØ±Ø¯ Ø±ØªØ±Ùˆ */}
+        <div className="bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-2xl border border-slate-800 space-y-6">
+          
+          {/* Ù‡Ø¯Ø± Ø¨ÙˆØ±Ø¯ */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800 text-white">
+            <div className="flex items-center gap-3">
+              <div className="w-3 h-3 rounded-full bg-red-500"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              <span className="ml-2 font-bold text-sm text-slate-300">Sprint 42 Retrospective â€” Mad / Sad / Glad</span>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <span className="text-xs bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full font-mono">
+                â± 04:15 Remaining
+              </span>
+              <button className="bg-indigo-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg flex items-center gap-1">
+                <FiPlus /> Add Card
+              </button>
+            </div>
+          </div>
+
+          {/* Ø³ØªÙˆÙ†â€ŒÙ‡Ø§ÛŒ Ø±ØªØ±Ùˆ */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Ø³ØªÙˆÙ† Û±: Glad */}
+            <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="font-bold text-emerald-400 flex items-center gap-2">
+                  <span>ðŸ˜Š</span> Glad (What went well)
+                </h4>
+                <span className="text-xs text-slate-400 font-mono">3 cards</span>
+              </div>
+
+              <div className="bg-emerald-900/30 border border-emerald-500/30 p-4 rounded-xl text-slate-200 text-sm space-y-3">
+                <p>The new deployment pipeline reduced release time by 40%!</p>
+                <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-emerald-500/20">
+                  <span className="font-medium text-emerald-300">@Alex</span>
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1 text-emerald-400 font-bold"><FiThumbsUp /> 8</span>
+                    <span className="flex items-center gap-1"><FiMessageSquare /> 2</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-emerald-900/30 border border-emerald-500/30 p-4 rounded-xl text-slate-200 text-sm space-y-3">
+                <p>Great collaboration between Frontend and Design team on UI specs.</p>
+                <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-emerald-500/20">
+                  <span className="font-medium text-emerald-300">@Sara</span>
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1 text-emerald-400 font-bold"><FiThumbsUp /> 5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Ø³ØªÙˆÙ† Û²: Sad */}
+            <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="font-bold text-amber-400 flex items-center gap-2">
+                  <span>ðŸ˜”</span> Sad (What didn't go well)
+                </h4>
+                <span className="text-xs text-slate-400 font-mono">2 cards</span>
+              </div>
+
+              <div className="bg-amber-900/30 border border-amber-500/30 p-4 rounded-xl text-slate-200 text-sm space-y-3">
+                <p>API documentation was outdated, causing integration blockers in Day 3.</p>
+                <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-amber-500/20">
+                  <span className="font-medium text-amber-300">@Mehdi</span>
+                  <div className="flex items-center gap-3">
+                    <span className="flex items-center gap-1 text-amber-400 font-bold"><FiThumbsUp /> 12</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Ø³ØªÙˆÙ† Û³: Action Items */}
+            <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-4">
+              <div className="flex items-center justify-between">
+                <h4 className="font-bold text-indigo-400 flex items-center gap-2">
+                  <span>ðŸš€</span> Action Items
+                </h4>
+                <span className="text-xs text-slate-400 font-mono">1 item</span>
+              </div>
+
+              <div className="bg-indigo-900/30 border border-indigo-500/30 p-4 rounded-xl text-slate-200 text-sm space-y-3">
+                <p className="font-semibold text-white">Automate OpenAPI docs generation during CI build.</p>
+                <div className="flex items-center justify-between text-xs text-slate-400 pt-2 border-t border-indigo-500/20">
+                  <span className="bg-indigo-500/20 text-indigo-300 px-2 py-0.5 rounded">Assignee: @DevOps</span>
+                  <span className="text-emerald-400 font-bold">Export to Jira</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+
+
+========================================
+FILE: UseCases.jsx
+========================================
+import { FiArrowRight } from 'react-icons/fi';
+
+export default function UseCases() {
+  const items = [
+    {
+      title: "Sprint retrospective",
+      description: "Review the sprint and choose one experiment for the next."
+    },
+    {
+      title: "First retrospective",
+      description: "Start with a simple agenda, clear ground rules, and a balanced format."
+    },
+    {
+      title: "Remote retrospectives",
+      description: "Give everyone space to contribute across calls, cameras, and time zones."
+    },
+    {
+      title: "Anonymous retrospectives",
+      description: "Use anonymous surveys to lower contribution pressure, then make follow-through visible."
+    },
+    {
+      title: "Engineering retrospectives",
+      description: "Inspect delivery, quality, reliability, dependencies, and technical ownership together."
+    },
+    {
+      title: "Product team retrospectives",
+      description: "Connect discovery, decisions, delivery, launch, and customer learning."
+    }
+  ];
+
+  return (
+    <section className="relative py-24 px-4 bg-[#FDFBF9]">
+      {/* Dot Pattern Background */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
+        style={{
+          backgroundImage: 'radial-gradient(#d1d5db 1px, transparent 1px)',
+          backgroundSize: '24px 24px'
+        }}
+      ></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="mb-12 max-w-3xl">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4 leading-tight">
+            Run a retrospective shaped for the conversation this team needs today.
+          </h2>
+          <p className="text-gray-500 text-base md:text-lg">
+            The four-phase workflow stays familiar. Change the prompts to fit the conversation.
+          </p>
+        </div>
+
+        {/* 6-Card Grid (3 columns on desktop, 2 on tablet, 1 on mobile) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((item, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-8 rounded-3xl border border-gray-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] flex flex-col justify-between transition-shadow hover:shadow-md cursor-pointer group"
+            >
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-1.5 text-xs font-semibold text-rose-500 group-hover:gap-2.5 transition-all">
+                <span>Explore</span>
+                <FiArrowRight size={14} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
+
+========================================
+FILE: App.css
+========================================
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+
+
+
+========================================
+FILE: App.jsx
+========================================
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import FeaturesBoard from './components/FeaturesBoard';
+import Pricing from './components/Pricing';
+import { FiMessageSquare } from 'react-icons/fi';
+import Phases from './components/Phases';
+import UseCases from './components/UseCases';
+import Contact from './components/Contact';
+export default function App() {
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        <Hero />
+        <Phases/>
+        <FeaturesBoard />
+        <UseCases></UseCases>
+        {/* Ù†ÙˆØ§Ø± Ù…ÛŒØ§Ù†ÛŒ Ø³Ø§Ø¯Ù‡ (FAQ & Footer CTA) */}
+        <div className="max-w-3xl mx-auto py-20 px-4 text-center">
+           <div className="bg-white border border-gray-200 rounded-3xl p-12 shadow-sm">
+              <div className="w-12 h-12 bg-[#FF5733]/10 text-[#FF5733] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <FiMessageSquare size={24} />
+              </div>
+              <h2 className="text-3xl font-bold mb-4">Start your next retro now.</h2>
+              <p className="text-gray-500 mb-8 text-sm max-w-sm mx-auto">Create a board and share the link. Before the team leaves, turn the chosen discussion into an action.</p>
+              <button className="bg-[#111827] text-white rounded-full px-8 py-3 font-medium hover:bg-black transition">
+                Start free retro
+              </button>
+           </div>
+        </div>
+        
+        <Pricing />
+      </main>
+ 
+        <Contact/>
+ 
+    </div>
+  );
+}
+
+
+
+========================================
+FILE: index.css
+========================================
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #FDFBF9; /* Ø±Ù†Ú¯ Ø¯Ù‚ÛŒÙ‚ Ù¾Ø³â€ŒØ²Ù…ÛŒÙ†Ù‡ Ø³Ø§ÛŒØª Ø§ØµÙ„ÛŒ */
+  color: #111827;
+}
+
+/* Ø¨Ø±Ø§ÛŒ Ø­Ø°Ù Ø§Ø³Ú©Ø±ÙˆÙ„â€ŒØ¨Ø§Ø± Ø§ÙÙ‚ÛŒ Ø¯Ø± ØµÙˆØ±Øª Ù†ÛŒØ§Ø² */
+html, body {
+  overflow-x: hidden;
+}
+
+
+
+========================================
+FILE: main.jsx
+========================================
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+    
+  </StrictMode>,
+)
+
+
+
+========================================
+FILE: vite.config.js
+========================================
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+
+
+
+========================================
+FILE: package.json
+========================================
+{
+  "name": "unbounce-landing",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "autoprefixer": "^10.5.4",
+    "eslint": "^10.8.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.7.0",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.2.0"
+  }
+}
+
+
+
+========================================
+FILE: index.html
+========================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>unbounce-landing</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+
+
