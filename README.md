@@ -1,16 +1,26 @@
-# React + Vite
+# Retrospective Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application designed for Agile and Scrum teams to run Retrospective meetings. This application is built as a practical sample project.
 
-Currently, two official plugins are available:
+# Purpose
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+HeyRetro is created to build a functional, interactive Single Page Application (SPA). The main goal of this project is to practice handling user interactions, client-side routing, and data persistence in React.
 
-## React Compiler
+# Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Responsive UI
+Dark / Light Theme
+Page Navigation
+Retro Board:
+Add new feedback items to designated columns ("Went Well" or "To Improve").
+Upvote feedback cards.
+Delete individual cards.
+Automatic state saving in `localStorage`.
+Modals: Functional popup modals for authentication and demo previews.
 
-## Expanding the ESLint configuration
+# Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Core Framework: React (Vite)
+Styling: Tailwind CSS
+Routing: React Router DOM
+Icons: React Icons
