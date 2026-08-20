@@ -25,7 +25,6 @@ function MainLayout() {
     }
   }, [darkMode]);
 
-  // اسکرول هوشمند به بخش‌ها حتی اگر آدرس مرورگر تغییر کرد
   useEffect(() => {
     const id = location.pathname.replace('/', '');
     if (id) {
@@ -76,7 +75,6 @@ export default function App() {
   return (
     <Routes>
       <Route path="/board" element={<Board />} />
-      {/* تمام آدرس‌های دیگر (شامل /pricing و /features) به لندینگ هدایت می‌شوند */}
       <Route path="*" element={<MainLayout />} />
     </Routes>
   );

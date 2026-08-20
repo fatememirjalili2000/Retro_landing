@@ -23,7 +23,6 @@ export default function Pricing() {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-stretch">
         
-        {/* Free */}
         <div className="bg-white rounded-3xl p-8 border border-gray-200">
           <h3 className="text-xl font-bold mb-2">Free</h3>
           <p className="text-sm text-gray-500 mb-6">For solo facilitators kicking the tires.</p>
@@ -35,7 +34,6 @@ export default function Pricing() {
           </ul>
         </div>
 
-        {/* Team */}
         <div className="bg-white rounded-3xl p-8 border border-gray-200">
           <h3 className="text-xl font-bold mb-2">Team</h3>
           <p className="text-sm text-gray-500 mb-6">For a single squad starting their retro habit.</p>
@@ -47,7 +45,6 @@ export default function Pricing() {
           </ul>
         </div>
 
-        {/* Team Pro (Dark) */}
         <div className="bg-[#111827] text-white rounded-3xl p-8 border border-gray-800 relative transform md:-translate-y-4 shadow-xl">
           <div className="absolute top-6 right-6 bg-[#FF5733] text-white text-xs font-bold px-2 py-1 rounded">Most popular</div>
           <h3 className="text-xl font-bold mb-2">Team Pro</h3>
@@ -61,7 +58,6 @@ export default function Pricing() {
           </ul>
         </div>
 
-        {/* Enterprise */}
         <div className="bg-white rounded-3xl p-8 border border-gray-200">
           <h3 className="text-xl font-bold mb-2">Enterprise</h3>
           <p className="text-sm text-gray-500 mb-6">For companies with SSO and scale needs.</p>

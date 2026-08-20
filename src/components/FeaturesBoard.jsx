@@ -1,5 +1,4 @@
 
-// مسیر عکس‌های خودت را اینجا ایمپورت کن
 import featureImg1 from '../assets/images/1.png';
 import featureImg2 from '../assets/images/2.png';
 import featureImg3 from '../assets/images/3.png';
@@ -28,7 +27,6 @@ export default function FeaturesBoard() {
 
   return (
     <section  id="features" className="relative py-20 px-4 bg-[#FDFBF9]">
-      {/* Dot Pattern Background */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
         style={{
@@ -38,19 +36,16 @@ export default function FeaturesBoard() {
       ></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Section Heading */}
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 mb-12">
           Everything stays on the board.
         </h2>
 
-        {/* 3-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((item) => (
             <div 
               key={item.id} 
               className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-[0_2px_12px_-4px_rgba(0,0,0,0.06)] flex flex-col h-full"
             >
-              {/* Image Container */}
               <div className="w-full h-56 sm:h-64 bg-gray-100 overflow-hidden">
                 <img 
                   src={item.image} 
@@ -59,7 +54,6 @@ export default function FeaturesBoard() {
                 />
               </div>
 
-              {/* Card Content */}
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-lg font-bold text-gray-900 mb-3 leading-snug">
                   {item.title}

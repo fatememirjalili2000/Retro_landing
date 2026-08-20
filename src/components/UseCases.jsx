@@ -30,7 +30,6 @@ export default function UseCases() {
 
   return (
     <section className="relative py-24 px-4 bg-[#FDFBF9]">
-      {/* Dot Pattern Background */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
         style={{
@@ -40,7 +39,6 @@ export default function UseCases() {
       ></div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <div className="mb-12 max-w-3xl">
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 mb-4 leading-tight">
             Run a retrospective shaped for the conversation this team needs today.
@@ -50,7 +48,6 @@ export default function UseCases() {
           </p>
         </div>
 
-        {/* 6-Card Grid (3 columns on desktop, 2 on tablet, 1 on mobile) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((item, index) => (
             <div 

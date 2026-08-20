@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiSmile } from 'react-icons/fi';
 
 export default function Footer() {

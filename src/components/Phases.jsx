@@ -1,7 +1,6 @@
 import { FiMessageSquare, FiCheckSquare, FiCrosshair, FiList } from 'react-icons/fi';
 
 export default function Phases() {
-  // تعریف داده‌ها به صورت مجزا برای جلوگیری از کثیف شدن JSX و تکرار کد
   const phasesData = [
     {
       id: '01',
@@ -31,10 +30,7 @@ export default function Phases() {
 
   return (
     <section id="phases" className="relative py-24 px-4 border-t border-gray-200/60 bg-[#FDFBF9]">
-      {/* 
-        الگوی نقطه‌ای پس‌زمینه (Dot Pattern)
-        این بخش دقیقاً همان حس بک‌گراند تصویرت را تداعی می‌کند.
-      */}
+     
       <div 
         className="absolute inset-0 pointer-events-none opacity-40 mix-blend-multiply"
         style={{

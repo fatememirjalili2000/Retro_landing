@@ -17,7 +17,6 @@ export default function AuthModal({ type = 'signup', onClose }) {
           <FiX size={20} />
         </button>
 
-        {/* Modal Header */}
         <div className="flex items-center gap-2 mb-6">
           <div className="text-[#FF5733] bg-[#FF5733]/10 p-2 rounded-xl">
             <FiMessageSquare className="w-6 h-6 fill-current" />
@@ -72,7 +71,6 @@ export default function AuthModal({ type = 'signup', onClose }) {
           </button>
         </form>
 
-        {/* Footer Toggle */}
         <div className="mt-6 text-center text-xs text-gray-500 dark:text-gray-400">
           {isLogin ? "Don't have an account? " : "Already have an account? "}
           <button 

@@ -21,7 +21,6 @@ export default function Navbar({ darkMode, setDarkMode, openAuth }) {
           </span>
         </Link>
 
-        {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-neutral-400">
           <button 
             onClick={() => scrollToSection('features')} 
@@ -43,7 +42,6 @@ export default function Navbar({ darkMode, setDarkMode, openAuth }) {
           </button>
         </div>
 
-        {/* Actions: Theme Toggle & Auth Buttons */}
         <div className="flex items-center gap-4">
           <button
             onClick={() => setDarkMode(!darkMode)}

@@ -5,10 +5,8 @@ export default function RetroBoardPreview() {
     <section id="preview" className="pb-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* کادر شبه‌نرم‌افزاری بورد رترو */}
         <div className="bg-slate-900 rounded-3xl p-4 sm:p-6 shadow-2xl border border-slate-800 space-y-6">
           
-          {/* هدر بورد */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800 text-white">
             <div className="flex items-center gap-3">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -27,10 +25,8 @@ export default function RetroBoardPreview() {
             </div>
           </div>
 
-          {/* ستون‌های رترو */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* ستون ۱: Glad */}
             <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-4">
               <div className="flex items-center justify-between">
                 <h4 className="font-bold text-emerald-400 flex items-center gap-2">
@@ -61,7 +57,6 @@ export default function RetroBoardPreview() {
               </div>
             </div>
 
-            {/* ستون ۲: Sad */}
             <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-4">
               <div className="flex items-center justify-between">
                 <h4 className="font-bold text-amber-400 flex items-center gap-2">
@@ -81,7 +76,6 @@ export default function RetroBoardPreview() {
               </div>
             </div>
 
-            {/* ستون ۳: Action Items */}
             <div className="bg-slate-800/60 rounded-2xl p-4 border border-slate-700/60 space-y-4">
               <div className="flex items-center justify-between">
                 <h4 className="font-bold text-indigo-400 flex items-center gap-2">

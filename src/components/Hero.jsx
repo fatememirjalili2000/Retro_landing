@@ -31,13 +31,7 @@ export default function Hero({ openAuth}) {
             <FiArrowRight />
           </button>
 
-          {/* <button 
-            onClick={openDemo}
-            className="w-full sm:w-auto bg-white dark:bg-neutral-800/80 border border-gray-200 dark:border-neutral-700/80 hover:border-gray-300 text-gray-800 dark:text-white font-medium px-6 py-3.5 rounded-full transition-all duration-200 flex items-center justify-center gap-2 shadow-sm hover:bg-gray-50 dark:hover:bg-neutral-700 cursor-pointer text-sm backdrop-blur-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-            <span>Try the live demo</span>
-          </button> */}
+         
 
           <button onClick={() => navigate('/board')}>
   Try the live demo

@@ -26,7 +26,6 @@ export default function DemoModal({ onClose }) {
           This is an interactive preview. Members of your team can add cards and vote in real time.
         </p>
 
-        {/* Demo Board Preview */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div className="p-4 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-900/50 rounded-2xl">
             <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400">Went Well (4)</span>
