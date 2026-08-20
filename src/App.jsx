@@ -11,48 +11,11 @@ import AuthModal from './components/AuthModal';
 import DemoModal from './components/DemoModal';
 import Board from './pages/Board';
 
-function LandingPage({ darkMode, setDarkMode, openAuth, openDemo }) {
-  const location = useLocation();
-
-  // اسکرول خودکار به بخش مربوطه در صورت تغییر مسیر
-  useEffect(() => {
-    const sectionId = location.pathname.replace('/', '');
-    if (sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }, [location]);
-
-  return (
-    <div className="bg-[#FDFBF9] dark:bg-[#0A0A0C] text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
-      <Navbar 
-        darkMode={darkMode} 
-        setDarkMode={setDarkMode}
-        openAuth={openAuth}
-      />
-
-      <main>
-        <Hero openAuth={() => openAuth('signup')} openDemo={openDemo} />
-        <div id="features"><FeaturesBoard /></div>
-        <div id="phases"><Phases /></div>
-        <div id="pricing"><Pricing openAuth={() => openAuth('signup')} /></div>
-      </main>
-
-      <div id="contact">
-        <Contact openAuth={() => openAuth('signup')} />
-      </div>
-    </div>
-  );
-}
-
-export default function App() {
+function MainLayout() {
   const [darkMode, setDarkMode] = useState(true);
   const [authModal, setAuthModal] = useState({ isOpen: false, type: 'signup' });
   const [isDemoOpen, setIsDemoOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (darkMode) {
@@ -62,68 +25,38 @@ export default function App() {
     }
   }, [darkMode]);
 
-  const handleOpenAuth = (type) => setAuthModal({ isOpen: true, type });
+  // اسکرول هوشمند به بخش‌ها حتی اگر آدرس مرورگر تغییر کرد
+  useEffect(() => {
+    const id = location.pathname.replace('/', '');
+    if (id) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
 
   return (
-    <>
-      <Routes>
-        <Route 
-          path="/" 
-          element={
-            <LandingPage 
-              darkMode={darkMode} 
-              setDarkMode={setDarkMode} 
-              openAuth={handleOpenAuth} 
-              openDemo={() => setIsDemoOpen(true)} 
-            />
-          } 
+    <div className="bg-[#FDFBF9] dark:bg-[#0A0A0C] text-gray-900 dark:text-gray-100 min-h-screen transition-colors duration-300">
+      <Navbar 
+        darkMode={darkMode} 
+        setDarkMode={setDarkMode}
+        openAuth={(type) => setAuthModal({ isOpen: true, type })}
+      />
+
+      <main>
+        <Hero 
+          openAuth={() => setAuthModal({ isOpen: true, type: 'signup' })} 
+          openDemo={() => setIsDemoOpen(true)} 
         />
-        <Route 
-          path="/features" 
-          element={
-            <LandingPage 
-              darkMode={darkMode} 
-              setDarkMode={setDarkMode} 
-              openAuth={handleOpenAuth} 
-              openDemo={() => setIsDemoOpen(true)} 
-            />
-          } 
-        />
-        <Route 
-          path="/phases" 
-          element={
-            <LandingPage 
-              darkMode={darkMode} 
-              setDarkMode={setDarkMode} 
-              openAuth={handleOpenAuth} 
-              openDemo={() => setIsDemoOpen(true)} 
-            />
-          } 
-        />
-        <Route 
-          path="/pricing" 
-          element={
-            <LandingPage 
-              darkMode={darkMode} 
-              setDarkMode={setDarkMode} 
-              openAuth={handleOpenAuth} 
-              openDemo={() => setIsDemoOpen(true)} 
-            />
-          } 
-        />
-        <Route path="/board" element={<Board />} />
-        <Route 
-          path="*" 
-          element={
-            <LandingPage 
-              darkMode={darkMode} 
-              setDarkMode={setDarkMode} 
-              openAuth={handleOpenAuth} 
-              openDemo={() => setIsDemoOpen(true)} 
-            />
-          } 
-        />
-      </Routes>
+        <div id="features"><FeaturesBoard /></div>
+        <div id="phases"><Phases /></div>
+        <div id="pricing"><Pricing openAuth={() => setAuthModal({ isOpen: true, type: 'signup' })} /></div>
+      </main>
+
+      <div id="contact">
+        <Contact openAuth={() => setAuthModal({ isOpen: true, type: 'signup' })} />
+      </div>
 
       {authModal.isOpen && (
         <AuthModal 
@@ -135,6 +68,16 @@ export default function App() {
       {isDemoOpen && (
         <DemoModal onClose={() => setIsDemoOpen(false)} />
       )}
-    </>
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/board" element={<Board />} />
+      {/* تمام آدرس‌های دیگر (شامل /pricing و /features) به لندینگ هدایت می‌شوند */}
+      <Route path="*" element={<MainLayout />} />
+    </Routes>
   );
 }
